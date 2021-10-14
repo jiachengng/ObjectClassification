@@ -15,22 +15,22 @@ namespace Test
         public static void Main()
         {
             // You can obtain these values from the Keys and Endpoint page for your Custom Vision resource in the Azure Portal.
-        string trainingEndpoint = "https://customvisionjc.cognitiveservices.azure.com/";
-        string trainingKey = "e7c2563942b8482595e6c80a9e960892";
-        // You can obtain these values from the Keys and Endpoint page for your Custom Vision Prediction resource in the Azure Portal.
-        string predictionEndpoint = "https://customvisionjc-prediction.cognitiveservices.azure.com/";
-        string predictionKey = "6e8dc9f09f5d4ffd9dafb9aaa33a8da2";
-        // You can obtain this value from the Properties page for your Custom Vision Prediction resource in the Azure Portal. See the "Resource ID" field. This typically has a value such as:
-        // /subscriptions/<your subscription ID>/resourceGroups/<your resource group>/providers/Microsoft.CognitiveServices/accounts/<your Custom Vision prediction resource name>
-        string predictionResourceId = "/subscriptions/732595f2-0961-4acb-b6eb-5b91f9219694/resourceGroups/ComputerVision/providers/Microsoft.CognitiveServices/accounts/CustomVisionJC";
+            string trainingEndpoint = "https://customvisionjc.cognitiveservices.azure.com/";
+            string trainingKey = "e7c2563942b8482595e6c80a9e960892";
+            // You can obtain these values from the Keys and Endpoint page for your Custom Vision Prediction resource in the Azure Portal.
+            string predictionEndpoint = "https://customvisionjc-prediction.cognitiveservices.azure.com/";
+            string predictionKey = "6e8dc9f09f5d4ffd9dafb9aaa33a8da2";
+            // You can obtain this value from the Properties page for your Custom Vision Prediction resource in the Azure Portal. See the "Resource ID" field. This typically has a value such as:
+            // /subscriptions/<your subscription ID>/resourceGroups/<your resource group>/providers/Microsoft.CognitiveServices/accounts/<your Custom Vision prediction resource name>
+            string predictionResourceId = "/subscriptions/732595f2-0961-4acb-b6eb-5b91f9219694/resourceGroups/ComputerVision/providers/Microsoft.CognitiveServices/accounts/CustomVisionJC";
 
-        List<string> hemlockImages;
-        List<string> japaneseCherryImages;
-        Tag hemlockTag;
-        Tag japaneseCherryTag;
-        Iteration iteration;
+            List<string> hemlockImages;
+            List<string> japaneseCherryImages;
+            Tag hemlockTag;
+            Tag japaneseCherryTag;
+            Iteration iteration;
 
-        
+
 
             CustomVisionTrainingClient trainingApi = AuthenticateTraining(trainingEndpoint, trainingKey);
             CustomVisionPredictionClient predictionApi = AuthenticatePrediction(predictionEndpoint, predictionKey);
@@ -69,7 +69,7 @@ namespace Test
 
         private static void TestIteration(CustomVisionPredictionClient predictionApi, Project project)
         {
-            MemoryStream testImage = new MemoryStream(File.ReadAllBytes(Path.Combine(@"C:\Users\jiacheng\Downloads", "test.jfif"))); ;
+            MemoryStream testImage = new MemoryStream(File.ReadAllBytes(Path.Combine(@"C:\Users\jiacheng\Downloads", "Cauliflower06.jfif"))); ;
             // Make a prediction against the new project
             Console.WriteLine("Making a prediction:");
             var result = predictionApi.ClassifyImage(project.Id, publishedModelName, testImage);
@@ -78,6 +78,13 @@ namespace Test
             foreach (var c in result.Predictions)
             {
                 Console.WriteLine($"\t{c.TagName}: {c.Probability:P1}");
+            }
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine($"\t{result.Predictions[i].TagName}: {result.Predictions[i].Probability:P1}");
+            }
+            {
+
             }
         }
 

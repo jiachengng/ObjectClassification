@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lTzXOb6nM7I/F0ONzBOO4nFtnvqhoeIgnZGUBd7II04MnewwXHX4JsbWEc2U03oL3/f3wrjf4NHoEfs9v0hyUQ==",
+  "dgSpecHash": "ZMbm/k7a38mLqgRvhiEPSqgG6y0/d0ki14XUeLDh3+D5GMOcZmjq9FxlW24mG2infORdS30md1Z7LbHrt/mMNg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jiacheng\\source\\repos\\Test\\Test.csproj",
+  "projectFilePath": "C:\\Users\\jiacheng\\Desktop\\Github\\Testing\\Test\\Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jiacheng\\.nuget\\packages\\microsoft.azure.cognitiveservices.vision.customvision.prediction\\2.0.0\\microsoft.azure.cognitiveservices.vision.customvision.prediction.2.0.0.nupkg.sha512",
     "C:\\Users\\jiacheng\\.nuget\\packages\\microsoft.azure.cognitiveservices.vision.customvision.training\\2.0.0\\microsoft.azure.cognitiveservices.vision.customvision.training.2.0.0.nupkg.sha512",
