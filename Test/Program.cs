@@ -1,8 +1,10 @@
-﻿using Microsoft.Azure.CognitiveServices.Vision.CustomVision.Prediction;
+﻿using Emgu.CV;
+using Microsoft.Azure.CognitiveServices.Vision.CustomVision.Prediction;
 using Microsoft.Azure.CognitiveServices.Vision.CustomVision.Training;
 using Microsoft.Azure.CognitiveServices.Vision.CustomVision.Training.Models;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Threading;
@@ -20,23 +22,21 @@ namespace Test
             // You can obtain these values from the Keys and Endpoint page for your Custom Vision Prediction resource in the Azure Portal.
             string predictionEndpoint = "https://customvisionjc-prediction.cognitiveservices.azure.com/";
             string predictionKey = "6e8dc9f09f5d4ffd9dafb9aaa33a8da2";
-            // You can obtain this value from the Properties page for your Custom Vision Prediction resource in the Azure Portal. See the "Resource ID" field. This typically has a value such as:
-            // /subscriptions/<your subscription ID>/resourceGroups/<your resource group>/providers/Microsoft.CognitiveServices/accounts/<your Custom Vision prediction resource name>
-            string predictionResourceId = "/subscriptions/732595f2-0961-4acb-b6eb-5b91f9219694/resourceGroups/ComputerVision/providers/Microsoft.CognitiveServices/accounts/CustomVisionJC";
-
-            List<string> hemlockImages;
-            List<string> japaneseCherryImages;
-            Tag hemlockTag;
-            Tag japaneseCherryTag;
-            Iteration iteration;
-
 
 
             CustomVisionTrainingClient trainingApi = AuthenticateTraining(trainingEndpoint, trainingKey);
             CustomVisionPredictionClient predictionApi = AuthenticatePrediction(predictionEndpoint, predictionKey);
 
             Project project = GetProject(trainingApi);
-            TestIteration(predictionApi, project);
+            int weighingScaleStatus = 1;
+
+            //While an item is on the scale
+            while (weighingScaleStatus == 1)
+            {
+                TestIteration(predictionApi, project);
+                Console.Write("Another image? (1 or 0): ");
+                weighingScaleStatus = Convert.ToInt32(Console.ReadLine());
+            }
 
         }
 
@@ -69,16 +69,27 @@ namespace Test
 
         private static void TestIteration(CustomVisionPredictionClient predictionApi, Project project)
         {
-            MemoryStream testImage = new MemoryStream(File.ReadAllBytes(Path.Combine(@"C:\Users\jiacheng\Downloads", "Cauliflower06.jfif"))); ;
+            VideoCapture capture = new VideoCapture(); //create a camera captue
+            Bitmap image = capture.QueryFrame().ToBitmap(); //take a picture
+
+            //Saving photos into folder
+            string filename = "file";
+            image.Save(filename);
+            string FileName = System.IO.Path.Combine(@"C:\Users\User\Downloads", DateTime.Now.ToString("yyy-MM-dd-hh-mm-ss"));
+            image.Save(FileName + ".jpg");
+            string imageFilePath = filename;
+
+            //MemoryStream testImage = new MemoryStream(File.ReadAllBytes(Path.Combine(@"C:\Users\User\Downloads", "2021-10-13-02-47-14.jpg"))); ;
+            MemoryStream testImage = new MemoryStream(File.ReadAllBytes(imageFilePath)); 
             // Make a prediction against the new project
-            Console.WriteLine("Making a prediction:");
+            Console.WriteLine("Making a prediction.");
             var result = predictionApi.ClassifyImage(project.Id, publishedModelName, testImage);
 
             // Loop over each prediction and write out the results
-            foreach (var c in result.Predictions)
-            {
-                Console.WriteLine($"\t{c.TagName}: {c.Probability:P1}");
-            }
+            //foreach (var c in result.Predictions)
+            //{
+            //    Console.WriteLine($"\t{c.TagName}: {c.Probability:P1}");
+            //}
             for (int i = 0; i < 3; i++)
             {
                 Console.WriteLine($"\t{result.Predictions[i].TagName}: {result.Predictions[i].Probability:P1}");
