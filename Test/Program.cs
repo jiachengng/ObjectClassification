@@ -13,7 +13,7 @@ namespace Test
 {
     public static class Program
     {
-        private static string publishedModelName = "Iteration6";
+        private static string publishedModelName = "Iteration8";
         public static void Main()
         {
             // You can obtain these values from the Keys and Endpoint page for your Custom Vision resource in the Azure Portal.
@@ -75,7 +75,7 @@ namespace Test
             //Saving photos into folder
             string filename = "file";
             image.Save(filename);
-            string FileName = System.IO.Path.Combine(@"C:\Users\User\Downloads", DateTime.Now.ToString("yyy-MM-dd-hh-mm-ss"));
+            string FileName = System.IO.Path.Combine(@"C:\Users\jiacheng\Downloads", DateTime.Now.ToString("yyy-MM-dd-hh-mm-ss"));
             image.Save(FileName + ".jpg");
             string imageFilePath = filename;
 
