@@ -29,26 +29,18 @@ namespace Test
         private static Project project = GetProject(trainingApi);
         private static Tag newTag;
 
+        private static int weighingScaleStatus = 1;
+        private static string tag;
+
         private static List<string> newImages;
         public static void Main()
         {
-            
-            int task = 0;
-            int weighingScaleStatus = 1;
 
             bool showMenu = true;
             while (showMenu)
             {
                 showMenu = MainMenu();
 
-            }
-
-            //While an item is on the scale
-            while (weighingScaleStatus == 1)
-            {
-                TestIteration(predictionApi, project);
-                Console.Write("Another image? (1 or 0): ");
-                weighingScaleStatus = Convert.ToInt32(Console.ReadLine());
             }
 
         }
@@ -88,6 +80,7 @@ namespace Test
             Console.WriteLine("2) Add Images");
             Console.WriteLine("3) Train Model");
             Console.WriteLine("4) Image Taking");
+            Console.WriteLine("5) Prediction");
             Console.Write("\r\nSelect an option: ");
 
             switch (Console.ReadLine())
@@ -103,6 +96,15 @@ namespace Test
                 case "4":
                     TakePhotoThreading();
                     return true;
+                case "5":
+                    //While an item is on the scale
+                    while (weighingScaleStatus == 1)
+                    {
+                        TestIteration(predictionApi, project);
+                        Console.Write("Another image? (1 or 0): ");
+                        weighingScaleStatus = Convert.ToInt32(Console.ReadLine());
+                    }
+                    return true;
                 default:
                     return true;
             }
@@ -112,15 +114,20 @@ namespace Test
         {
             //List<string> newImages;
             Console.WriteLine("Tag Name:");
-            String tag = Console.ReadLine();
+            tag = Console.ReadLine();
             newTag = trainingApi.CreateTag(project.Id, tag);
+
+            string folderName = @"C:\Users\Admin\Downloads";
+            string pathString = System.IO.Path.Combine(folderName, tag);
+            System.IO.Directory.CreateDirectory(pathString);
         }
 
         private static void LoadImagesFromDisk()
         {
             // this loads the images to be uploaded from disk into memory
-            newImages = Directory.GetFiles(Path.Combine(@"C:\Users\Admin\Downloads", "JC")).ToList();
+            //newImages = Directory.GetFiles(Path.Combine(@"C:\Users\Admin\Downloads", "tag")).ToList();
             //MemoryStream testImage = new MemoryStream(File.ReadAllBytes(Path.Combine("Images", "Test", "test_image.jpg")));
+            newImages = Directory.GetFiles(Path.Combine(@"C:\Users\Admin\Downloads", tag)).ToList();
         }
 
         private static void UploadImages(CustomVisionTrainingClient trainingApi, Project project)
@@ -162,7 +169,8 @@ namespace Test
             {
                 Console.WriteLine($"\t{result.Predictions[i].TagName}: {result.Predictions[i].Probability:P1}");
             }
- 
+            
+
         }
         public static void ChildThread1()
         {
