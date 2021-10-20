@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading;
 
 namespace Test
@@ -37,6 +38,8 @@ namespace Test
         private static List<string> newImages;
 
         private static Iteration iteration;
+        private static SqlConnection conn;
+
         public static void Main()
         {
             Console.WriteLine("Getting Connection ...");
@@ -51,7 +54,7 @@ namespace Test
                         + database + ";Persist Security Info=True;User ID=" + username + ";Password=" + password;
 
             //create instanace of database connection
-            SqlConnection conn = new SqlConnection(connString);
+            conn = new SqlConnection(connString);
 
 
             try
@@ -159,6 +162,17 @@ namespace Test
             string folderName = @"C:\Users\Admin\Downloads";
             string pathString = System.IO.Path.Combine(folderName, tag);
             System.IO.Directory.CreateDirectory(pathString);
+
+            StringBuilder strBuilder = new StringBuilder();
+            strBuilder.Append("INSERT INTO dbo.MF_JC_GRP(COMP_CODE, PART_GRP, AC_TYPE, DEPT_CODE) VALUES ");
+            strBuilder.Append("(N'Test', N'Test', N'T', N'T') ");
+
+            string sqlQuery = strBuilder.ToString();
+            using (SqlCommand command = new SqlCommand(sqlQuery, conn)) //pass SQL query created above and connection
+            {
+                command.ExecuteNonQuery(); //execute the Query
+                Console.WriteLine("Query Executed.");
+            }
         }
 
         private static void LoadImagesFromDisk()
