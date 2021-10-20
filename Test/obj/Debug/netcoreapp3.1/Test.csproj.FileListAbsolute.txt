@@ -155,3 +155,9 @@ C:\Users\Admin\Desktop\JC\Testing\Test\obj\Debug\netcoreapp3.1\Test.csproj.CoreC
 C:\Users\Admin\Desktop\JC\Testing\Test\obj\Debug\netcoreapp3.1\Test.dll
 C:\Users\Admin\Desktop\JC\Testing\Test\obj\Debug\netcoreapp3.1\Test.pdb
 C:\Users\Admin\Desktop\JC\Testing\Test\obj\Debug\netcoreapp3.1\Test.genruntimeconfig.cache
+C:\Users\Admin\Desktop\JC\Testing\Test\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\Admin\Desktop\JC\Testing\Test\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\Admin\Desktop\JC\Testing\Test\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\Admin\Desktop\JC\Testing\Test\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\Admin\Desktop\JC\Testing\Test\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Admin\Desktop\JC\Testing\Test\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll

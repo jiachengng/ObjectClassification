@@ -4,6 +4,7 @@ using Microsoft.Azure.CognitiveServices.Vision.CustomVision.Training;
 using Microsoft.Azure.CognitiveServices.Vision.CustomVision.Training.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace Test
 {
     public static class Program
     {
-        private static string publishedModelName = "Iteration9";
+        private static string publishedModelName = "Iteration14";
 
         // You can obtain these values from the Keys and Endpoint page for your Custom Vision resource in the Azure Portal.
         private static string trainingEndpoint = "https://customvisionjc.cognitiveservices.azure.com/";
@@ -38,6 +39,36 @@ namespace Test
         private static Iteration iteration;
         public static void Main()
         {
+            Console.WriteLine("Getting Connection ...");
+
+            var datasource = @"DESKTOP-NTJ2LA6\SQLEXPRESS2016";//your server
+            var database = "FnB_Pos_New"; //your database name
+            var username = "sa"; //username of server to connect
+            var password = "p@ssw0rd"; //password
+
+            //your connection string 
+            string connString = @"Data Source=" + datasource + ";Initial Catalog="
+                        + database + ";Persist Security Info=True;User ID=" + username + ";Password=" + password;
+
+            //create instanace of database connection
+            SqlConnection conn = new SqlConnection(connString);
+
+
+            try
+            {
+                Console.WriteLine("Openning Connection ...");
+
+                //open connection
+                conn.Open();
+
+                Console.WriteLine("Connection successful!");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+            }
+
+            Console.Read();
 
             bool showMenu = true;
             while (showMenu)
