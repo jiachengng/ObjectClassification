@@ -21,6 +21,7 @@ namespace Test
         // You can obtain these values from the Keys and Endpoint page for your Custom Vision Prediction resource in the Azure Portal.
         private static string predictionEndpoint = "https://customvisionjc-prediction.cognitiveservices.azure.com/";
         private static string predictionKey = "6e8dc9f09f5d4ffd9dafb9aaa33a8da2";
+        private static string predictionResourceId = "/subscriptions/732595f2-0961-4acb-b6eb-5b91f9219694/resourceGroups/ComputerVision/providers/Microsoft.CognitiveServices/accounts/CustomVisionJC";
 
 
         private static CustomVisionTrainingClient trainingApi = AuthenticateTraining(trainingEndpoint, trainingKey);
@@ -33,6 +34,8 @@ namespace Test
         private static string tag;
 
         private static List<string> newImages;
+
+        private static Iteration iteration;
         public static void Main()
         {
 
@@ -77,10 +80,11 @@ namespace Test
             Console.Clear();
             Console.WriteLine("Choose an option:");
             Console.WriteLine("1) Add Tag");
-            Console.WriteLine("2) Add Images");
+            Console.WriteLine("2) Add Images to Model");
             Console.WriteLine("3) Train Model");
             Console.WriteLine("4) Image Taking");
             Console.WriteLine("5) Prediction");
+            Console.WriteLine("6) Publish Model");
             Console.Write("\r\nSelect an option: ");
 
             switch (Console.ReadLine())
@@ -92,7 +96,8 @@ namespace Test
                     UploadImages(trainingApi, project);
                     return true;
                 case "3":
-                    return false;
+                    TrainProject(trainingApi, project);
+                    return true;
                 case "4":
                     TakePhotoThreading();
                     return true;
@@ -104,6 +109,9 @@ namespace Test
                         Console.Write("Another image? (1 or 0): ");
                         weighingScaleStatus = Convert.ToInt32(Console.ReadLine());
                     }
+                    return true;
+                case "6":
+                    PublishIteration(trainingApi, project);
                     return true;
                 default:
                     return true;
@@ -180,7 +188,7 @@ namespace Test
             Bitmap image1 = capture1.QueryFrame().ToBitmap(); //take a picture
             Console.WriteLine("Child thread 1 took a photo");
             //Saving photos into folder
-            string FileName = System.IO.Path.Combine(@"C:\Users\Admin\Downloads\JC", DateTime.Now.ToString("yyy-MM-dd-hh-mm-ss"));
+            string FileName = System.IO.Path.Combine(@"C:\Users\Admin\Downloads", tag, DateTime.Now.ToString("yyy-MM-dd-hh-mm-ss"));
             image1.Save(FileName + "1" + ".jpg");
             Console.WriteLine("Child thread 1 saved an image in the folder");
         }
@@ -192,7 +200,7 @@ namespace Test
             Bitmap image2 = capture2.QueryFrame().ToBitmap(); //take a picture
             Console.WriteLine("Child thread 2 took a photo");
 
-            string FileName = System.IO.Path.Combine(@"C:\Users\Admin\Downloads\JC", DateTime.Now.ToString("yyy-MM-dd-hh-mm-ss"));
+            string FileName = System.IO.Path.Combine(@"C:\Users\Admin\Downloads", tag, DateTime.Now.ToString("yyy-MM-dd-hh-mm-ss"));
             image2.Save(FileName + "2" + ".jpg");
             Console.WriteLine("Child thread 2 saved an image in the folder");
         }
@@ -205,7 +213,7 @@ namespace Test
             Bitmap image3 = capture3.QueryFrame().ToBitmap(); //take a picture
             Console.WriteLine("Child thread 3 took a photo");
 
-            string FileName = System.IO.Path.Combine(@"C:\Users\Admin\Downloads\JC", DateTime.Now.ToString("yyy-MM-dd-hh-mm-ss"));
+            string FileName = System.IO.Path.Combine(@"C:\Users\Admin\Downloads", tag, DateTime.Now.ToString("yyy-MM-dd-hh-mm-ss"));
             image3.Save(FileName + "3" + ".jpg");
             Console.WriteLine("Child thread 3 saved an image in the folder");
         }
@@ -218,7 +226,7 @@ namespace Test
             Bitmap image4 = capture4.QueryFrame().ToBitmap(); //take a picture
             Console.WriteLine("Child thread 4 took a photo");
 
-            string FileName = System.IO.Path.Combine(@"C:\Users\Admin\Downloads\JC", DateTime.Now.ToString("yyy-MM-dd-hh-mm-ss"));
+            string FileName = System.IO.Path.Combine(@"C:\Users\Admin\Downloads", tag, DateTime.Now.ToString("yyy-MM-dd-hh-mm-ss"));
             image4.Save(FileName + "4" + ".jpg");
             Console.WriteLine("Child thread 4 saved an image in the folder");
         }
@@ -251,7 +259,32 @@ namespace Test
             }
         }
 
+        private static void TrainProject(CustomVisionTrainingClient trainingApi, Project project)
+        {
+            // Now there are images with tags start training the project
+            Console.WriteLine("\tTraining");
+            iteration = trainingApi.TrainProject(project.Id);
 
+            // The returned iteration will be in progress, and can be queried periodically to see when it has completed
+            while (iteration.Status == "Training")
+            {
+                Console.WriteLine("Waiting 10 seconds for training to complete...");
+                Thread.Sleep(10000);
 
+                // Re-query the iteration to get it's updated status
+                iteration = trainingApi.GetIteration(project.Id, iteration.Id);
+            }
         }
+
+        private static void PublishIteration(CustomVisionTrainingClient trainingApi, Project project)
+        {
+            trainingApi.PublishIteration(project.Id, iteration.Id, publishedModelName, predictionResourceId);
+            Console.WriteLine("Done!\n");
+
+            // Now there is a trained endpoint, it can be used to make a prediction
+        }
+
+
+
+    }
 }
