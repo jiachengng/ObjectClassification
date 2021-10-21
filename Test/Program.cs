@@ -4,6 +4,7 @@ using Microsoft.Azure.CognitiveServices.Vision.CustomVision.Training;
 using Microsoft.Azure.CognitiveServices.Vision.CustomVision.Training.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
@@ -163,16 +164,11 @@ namespace Test
             string pathString = System.IO.Path.Combine(folderName, tag);
             System.IO.Directory.CreateDirectory(pathString);
 
-            StringBuilder strBuilder = new StringBuilder();
-            strBuilder.Append("INSERT INTO dbo.MF_JC_GRP(COMP_CODE, PART_GRP, AC_TYPE, DEPT_CODE) VALUES ");
-            strBuilder.Append("(N'Test', N'Test', N'T', N'T') ");
-
-            string sqlQuery = strBuilder.ToString();
-            using (SqlCommand command = new SqlCommand(sqlQuery, conn)) //pass SQL query created above and connection
-            {
-                command.ExecuteNonQuery(); //execute the Query
-                Console.WriteLine("Query Executed.");
-            }
+            string x = "INSERT INTO dbo.MF_JC_GRP(COMP_CODE, PART_GRP, AC_TYPE, DEPT_CODE) VALUES('Test', '" + tag +
+                "', 'T','T')";
+            SqlCommand command = new SqlCommand(x, conn);
+            command.ExecuteNonQuery();
+            Console.WriteLine("query executed.");
         }
 
         private static void LoadImagesFromDisk()
@@ -233,9 +229,16 @@ namespace Test
             Bitmap image1 = capture1.QueryFrame().ToBitmap(); //take a picture
             Console.WriteLine("Child thread 1 took a photo");
             //Saving photos into folder
-            string FileName = System.IO.Path.Combine(@"C:\Users\Admin\Downloads", tag, DateTime.Now.ToString("yyy-MM-dd-hh-mm-ss"));
-            image1.Save(FileName + "1" + ".jpg");
+            string FileName = System.IO.Path.Combine(@"C:\Users\Admin\Downloads", tag, DateTime.Now.ToString("yyy-MM-dd-hh-mm-ssss"));
+            FileName = FileName + "1" + ".jpg";
+            image1.Save(FileName);
             Console.WriteLine("Child thread 1 saved an image in the folder");
+
+            string x = "INSERT INTO dbo.MF_JC(COMP_CODE, PART_GRP, PART_NO, PART_DESC) VALUES('Test', '" + tag +
+                "', '" + FileName + "','" + tag +"')";
+            SqlCommand command = new SqlCommand(x, conn);
+            command.ExecuteNonQuery();
+            Console.WriteLine("query executed.");
         }
         public static void ChildThread2()
         {
@@ -245,9 +248,16 @@ namespace Test
             Bitmap image2 = capture2.QueryFrame().ToBitmap(); //take a picture
             Console.WriteLine("Child thread 2 took a photo");
 
-            string FileName = System.IO.Path.Combine(@"C:\Users\Admin\Downloads", tag, DateTime.Now.ToString("yyy-MM-dd-hh-mm-ss"));
-            image2.Save(FileName + "2" + ".jpg");
+            string FileName = System.IO.Path.Combine(@"C:\Users\Admin\Downloads", tag, DateTime.Now.ToString("yyy-MM-dd-hh-mm-ssss"));
+            FileName = FileName + "2" + ".jpg";
+            image2.Save(FileName);
             Console.WriteLine("Child thread 2 saved an image in the folder");
+
+            string x = "INSERT INTO dbo.MF_JC(COMP_CODE, PART_GRP, PART_NO, PART_DESC) VALUES('Test', '" + tag +
+                "', '" + FileName + "', '" + tag + "')";
+            SqlCommand command = new SqlCommand(x, conn);
+            command.ExecuteNonQuery();
+            Console.WriteLine("query executed.");
         }
 
         public static void ChildThread3()
@@ -258,9 +268,16 @@ namespace Test
             Bitmap image3 = capture3.QueryFrame().ToBitmap(); //take a picture
             Console.WriteLine("Child thread 3 took a photo");
 
-            string FileName = System.IO.Path.Combine(@"C:\Users\Admin\Downloads", tag, DateTime.Now.ToString("yyy-MM-dd-hh-mm-ss"));
-            image3.Save(FileName + "3" + ".jpg");
+            string FileName = System.IO.Path.Combine(@"C:\Users\Admin\Downloads", tag, DateTime.Now.ToString("yyy-MM-dd-hh-mm-ssss"));
+            FileName = FileName + "3" + ".jpg";
+            image3.Save(FileName);
             Console.WriteLine("Child thread 3 saved an image in the folder");
+
+            string x = "INSERT INTO dbo.MF_JC(COMP_CODE, PART_GRP, PART_NO, PART_DESC) VALUES('Test', '" + tag +
+                "', '" + FileName + "','" + tag + "')";
+            SqlCommand command = new SqlCommand(x, conn);
+            command.ExecuteNonQuery();
+            Console.WriteLine("query executed.");
         }
 
         public static void ChildThread4()
@@ -271,9 +288,16 @@ namespace Test
             Bitmap image4 = capture4.QueryFrame().ToBitmap(); //take a picture
             Console.WriteLine("Child thread 4 took a photo");
 
-            string FileName = System.IO.Path.Combine(@"C:\Users\Admin\Downloads", tag, DateTime.Now.ToString("yyy-MM-dd-hh-mm-ss"));
-            image4.Save(FileName + "4" + ".jpg");
+            string FileName = System.IO.Path.Combine(@"C:\Users\Admin\Downloads", tag, DateTime.Now.ToString("yyy-MM-dd-hh-mm-ssss"));
+            FileName = FileName + "4" + ".jpg";
+            image4.Save(FileName);
             Console.WriteLine("Child thread 4 saved an image in the folder");
+
+            string x = "INSERT INTO dbo.MF_JC(COMP_CODE, PART_GRP, PART_NO, PART_DESC) VALUES('Test', '" + tag +
+                "', '" + FileName + "','" + tag + "')";
+            SqlCommand command = new SqlCommand(x, conn);
+            command.ExecuteNonQuery();
+            Console.WriteLine("query executed.");
         }
 
         public static void TakePhotoThreading()

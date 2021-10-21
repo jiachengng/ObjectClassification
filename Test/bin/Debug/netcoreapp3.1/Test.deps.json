@@ -12,6 +12,8 @@
           "Emgu.CV.runtime.windows": "4.5.3.4721",
           "Microsoft.Azure.CognitiveServices.Vision.CustomVision.Prediction": "2.0.0",
           "Microsoft.Azure.CognitiveServices.Vision.CustomVision.Training": "2.0.0",
+          "System.Console": "4.3.1",
+          "System.Data.Common": "4.3.0",
           "System.Data.SqlClient": "4.8.3"
         },
         "runtime": {
@@ -268,7 +270,7 @@
           "System.AppContext": "4.3.0",
           "System.Collections": "4.3.0",
           "System.Collections.Concurrent": "4.3.0",
-          "System.Console": "4.3.0",
+          "System.Console": "4.3.1",
           "System.Diagnostics.Debug": "4.3.0",
           "System.Diagnostics.Tools": "4.3.0",
           "System.Diagnostics.Tracing": "4.3.0",
@@ -494,13 +496,25 @@
           "System.Threading": "4.3.0"
         }
       },
-      "System.Console/4.3.0": {
+      "System.Console/4.3.1": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "5.0.0",
           "Microsoft.NETCore.Targets": "1.1.3",
           "System.IO": "4.3.0",
           "System.Runtime": "4.3.1",
           "System.Text.Encoding": "4.3.0"
+        }
+      },
+      "System.Data.Common/4.3.0": {
+        "dependencies": {
+          "System.Collections": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.IO": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.1",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Text.RegularExpressions": "4.3.0",
+          "System.Threading.Tasks": "4.3.0"
         }
       },
       "System.Data.SqlClient/4.8.3": {
@@ -1462,12 +1476,19 @@
       "path": "system.componentmodel.typeconverter/4.3.0",
       "hashPath": "system.componentmodel.typeconverter.4.3.0.nupkg.sha512"
     },
-    "System.Console/4.3.0": {
+    "System.Console/4.3.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-DHDrIxiqk1h03m6khKWV2X8p/uvN79rgSqpilL6uzpmSfxfU5ng8VcPtW4qsDsQDHiTv6IPV9TmD5M/vElPNLg==",
-      "path": "system.console/4.3.0",
-      "hashPath": "system.console.4.3.0.nupkg.sha512"
+      "sha512": "sha512-6iKDG36vugpW230eBGMLL6GQIx+Buf5txz6DFC1c4MOH8qcOo2mFzId6GsJUTptR4AusnDsdUeCYuzDiftD39w==",
+      "path": "system.console/4.3.1",
+      "hashPath": "system.console.4.3.1.nupkg.sha512"
+    },
+    "System.Data.Common/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lm6E3T5u7BOuEH0u18JpbJHxBfOJPuCyl4Kg1RH10ktYLp5uEEE1xKrHW56/We4SnZpGAuCc9N0MJpSDhTHZGQ==",
+      "path": "system.data.common/4.3.0",
+      "hashPath": "system.data.common.4.3.0.nupkg.sha512"
     },
     "System.Data.SqlClient/4.8.3": {
       "type": "package",
