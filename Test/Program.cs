@@ -120,6 +120,7 @@ namespace Test
             Console.WriteLine("4) Image Taking");
             Console.WriteLine("5) Prediction");
             Console.WriteLine("6) Publish Model");
+            Console.WriteLine("9) Add Tag, Image taking, Add to Model");
             Console.Write("\r\nSelect an option: ");
 
             switch (Console.ReadLine())
@@ -147,6 +148,11 @@ namespace Test
                     return true;
                 case "6":
                     PublishIteration(trainingApi, project);
+                    return true;
+                case "9":
+                    AddTags(trainingApi, project);
+                    TakePhotoThreading();
+                    UploadImages(trainingApi, project);
                     return true;
                 default:
                     return true;
@@ -237,6 +243,7 @@ namespace Test
             string x = "INSERT INTO dbo.MF_JC(COMP_CODE, PART_GRP, PART_NO, PART_DESC) VALUES('Test', '" + tag +
                 "', '" + FileName + "','" + tag +"')";
             SqlCommand command = new SqlCommand(x, conn);
+            command.CommandTimeout = 0;
             command.ExecuteNonQuery();
             Console.WriteLine("query executed.");
         }
@@ -256,6 +263,7 @@ namespace Test
             string x = "INSERT INTO dbo.MF_JC(COMP_CODE, PART_GRP, PART_NO, PART_DESC) VALUES('Test', '" + tag +
                 "', '" + FileName + "', '" + tag + "')";
             SqlCommand command = new SqlCommand(x, conn);
+            command.CommandTimeout = 0;
             command.ExecuteNonQuery();
             Console.WriteLine("query executed.");
         }
@@ -276,6 +284,7 @@ namespace Test
             string x = "INSERT INTO dbo.MF_JC(COMP_CODE, PART_GRP, PART_NO, PART_DESC) VALUES('Test', '" + tag +
                 "', '" + FileName + "','" + tag + "')";
             SqlCommand command = new SqlCommand(x, conn);
+            command.CommandTimeout = 0;
             command.ExecuteNonQuery();
             Console.WriteLine("query executed.");
         }
@@ -296,6 +305,7 @@ namespace Test
             string x = "INSERT INTO dbo.MF_JC(COMP_CODE, PART_GRP, PART_NO, PART_DESC) VALUES('Test', '" + tag +
                 "', '" + FileName + "','" + tag + "')";
             SqlCommand command = new SqlCommand(x, conn);
+            command.CommandTimeout = 0;
             command.ExecuteNonQuery();
             Console.WriteLine("query executed.");
         }
@@ -347,7 +357,8 @@ namespace Test
 
         private static void PublishIteration(CustomVisionTrainingClient trainingApi, Project project)
         {
-            trainingApi.PublishIteration(project.Id, iteration.Id, publishedModelName, predictionResourceId);
+            string x = "newPublished";
+            trainingApi.PublishIteration(project.Id, iteration.Id, x, predictionResourceId);
             Console.WriteLine("Done!\n");
 
             // Now there is a trained endpoint, it can be used to make a prediction
