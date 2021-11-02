@@ -51,8 +51,7 @@ namespace Test
             var password = "p@ssw0rd"; //password
 
             //your connection string 
-            string connString = @"Data Source=" + datasource + ";Initial Catalog="
-                        + database + ";Persist Security Info=True;User ID=" + username + ";Password=" + password;
+            string connString = @"Data Source=" + datasource + ";Initial Catalog="+ database + ";Persist Security Info=True;User ID=" + username + ";Password=" + password;
 
             //create instanace of database connection
             conn = new SqlConnection(connString);
@@ -106,7 +105,7 @@ namespace Test
         {
             // Create a new project
             Console.WriteLine("Getting project:");
-            const string V = "4096a74a-379c-4565-8233-2231a9898555";
+            const string V = "b0ebc9a4-47de-4de8-86a8-06454404a42e";
             return trainingApi.GetProject(Guid.Parse(V));
         }
 
