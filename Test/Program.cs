@@ -16,15 +16,15 @@ namespace Test
 {
     public static class Program
     {
-        private static string publishedModelName = "Iteration14";
+        private static string publishedModelName = "Iteration1";
 
         // You can obtain these values from the Keys and Endpoint page for your Custom Vision resource in the Azure Portal.
-        private static string trainingEndpoint = "https://customvisionjc.cognitiveservices.azure.com/";
-        private static string trainingKey = "e7c2563942b8482595e6c80a9e960892";
+        private static string trainingEndpoint = "https://imageclassificationjc.cognitiveservices.azure.com/";
+        private static string trainingKey = "d9178858eeda4d63ab7399f375825cfd";
         // You can obtain these values from the Keys and Endpoint page for your Custom Vision Prediction resource in the Azure Portal.
-        private static string predictionEndpoint = "https://customvisionjc-prediction.cognitiveservices.azure.com/";
-        private static string predictionKey = "6e8dc9f09f5d4ffd9dafb9aaa33a8da2";
-        private static string predictionResourceId = "/subscriptions/732595f2-0961-4acb-b6eb-5b91f9219694/resourceGroups/ComputerVision/providers/Microsoft.CognitiveServices/accounts/CustomVisionJC";
+        private static string predictionEndpoint = "https://imageclassificationjc-prediction.cognitiveservices.azure.com/";
+        private static string predictionKey = "203e7e3581994ec8847f3584d609339a";
+        private static string predictionResourceId = "/subscriptions/27042756-0171-4971-a639-aedb809ec487/resourceGroups/MecWiseRGCS/providers/Microsoft.CognitiveServices/accounts/ImageClassificationJC";
 
 
         private static CustomVisionTrainingClient trainingApi = AuthenticateTraining(trainingEndpoint, trainingKey);
