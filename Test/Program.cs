@@ -200,7 +200,7 @@ namespace Test
 
         private static void TestIteration(CustomVisionPredictionClient predictionApi, Project project)
         {
-            VideoCapture capture = new VideoCapture(); //create a camera captue
+            VideoCapture capture = new VideoCapture(1); //create a camera captue
             Bitmap image = capture.QueryFrame().ToBitmap(); //take a picture
 
             //Saving photos into folder
