@@ -4,6 +4,7 @@ using Microsoft.Azure.CognitiveServices.Vision.CustomVision.Training;
 using Microsoft.Azure.CognitiveServices.Vision.CustomVision.Training.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -219,11 +220,28 @@ namespace Test
             //{
             //    Console.WriteLine($"\t{c.TagName}: {c.Probability:P1}");
             //}
-            for (int i = 0; i < 3; i++)
+            string predicted = "";
+            for (int i = 0; i < 1; i++)
             {
+                predicted = result.Predictions[i].TagName;
+                //Console.WriteLine(predicted);
                 Console.WriteLine($"\t{result.Predictions[i].TagName}: {result.Predictions[i].Probability:P1}");
             }
-            
+
+            Console.WriteLine("Getting database tag");
+            string y = "select RUN_NO from MF_ITEM_TAG where TAG= '" + predicted + "'"; 
+
+            SqlCommand command = new SqlCommand(y, conn);
+            command.CommandTimeout = 0;
+
+            var dataSet = new DataSet();
+            var dataAdapter = new SqlDataAdapter { SelectCommand = command };
+            dataAdapter.Fill(dataSet);
+            string output = dataSet.Tables[0].Rows[0][0].ToString();
+            Console.WriteLine(output);
+            //Console.WriteLine(command.ExecuteNonQuery());
+
+
 
         }
         public static void ChildThread1()
