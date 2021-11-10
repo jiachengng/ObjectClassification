@@ -14,7 +14,25 @@
           "Microsoft.Azure.CognitiveServices.Vision.CustomVision.Training": "2.0.0",
           "System.Console": "4.3.1",
           "System.Data.Common": "4.3.0",
-          "System.Data.SqlClient": "4.8.3"
+          "System.Data.SqlClient": "4.8.3",
+          "ePlatform.CommonClasses": "4.0.0.0",
+          "ePlatform.EpfBase": "5.0.0.0",
+          "MecWise.Blazor.Api.DataAccess": "1.0.0.0",
+          "MecWise.Blazor.Api": "1.0.0.0",
+          "MecWise.Blazor.Api.Repositories": "1.0.0.0",
+          "MecWise.Blazor.Api.Services": "1.0.0.0",
+          "MecWise.Blazor.Api.WorkflowServer": "1.0.0.0",
+          "MecWise.Blazor.Common": "1.0.0.0",
+          "MecWise.Blazor.Components": "1.0.0.0",
+          "MecWise.Blazor": "1.0.0.0",
+          "MecWise.Blazor.Entities": "1.0.0.0",
+          "MecWise.Blazor.Utilities.Client": "1.0.0.0",
+          "MecWise.Blazor.Workflow": "1.0.0.0",
+          "MecWise.Distribution.Common.Server": "6.0.0.10",
+          "MecWise.HR.TmsEngine": "5.0.0.0",
+          "Mecwise.Messenger.CommonClasses": "5.0.0.0",
+          "Microsoft.AspNetCore.Components": "5.0.0.0",
+          "Microsoft.JSInterop": "3.1.4.0"
         },
         "runtime": {
           "Test.dll": {}
@@ -1145,6 +1163,150 @@
           "System.Threading": "4.3.0",
           "System.Xml.ReaderWriter": "4.3.0"
         }
+      },
+      "ePlatform.CommonClasses/4.0.0.0": {
+        "runtime": {
+          "ePlatform.CommonClasses.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.6.0.603"
+          }
+        }
+      },
+      "ePlatform.EpfBase/5.0.0.0": {
+        "runtime": {
+          "ePlatform.EpfBase.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.0.1"
+          }
+        }
+      },
+      "MecWise.Blazor.Api.DataAccess/1.0.0.0": {
+        "runtime": {
+          "MecWise.Blazor.Api.DataAccess.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "MecWise.Blazor.Api/1.0.0.0": {
+        "runtime": {
+          "MecWise.Blazor.Api.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "MecWise.Blazor.Api.Repositories/1.0.0.0": {
+        "runtime": {
+          "MecWise.Blazor.Api.Repositories.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "MecWise.Blazor.Api.Services/1.0.0.0": {
+        "runtime": {
+          "MecWise.Blazor.Api.Services.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "MecWise.Blazor.Api.WorkflowServer/1.0.0.0": {
+        "runtime": {
+          "MecWise.Blazor.Api.WorkflowServer.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "MecWise.Blazor.Common/1.0.0.0": {
+        "runtime": {
+          "MecWise.Blazor.Common.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "MecWise.Blazor.Components/1.0.0.0": {
+        "runtime": {
+          "MecWise.Blazor.Components.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "MecWise.Blazor/1.0.0.0": {
+        "runtime": {
+          "MecWise.Blazor.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "MecWise.Blazor.Entities/1.0.0.0": {
+        "runtime": {
+          "MecWise.Blazor.Entities.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "MecWise.Blazor.Utilities.Client/1.0.0.0": {
+        "runtime": {
+          "MecWise.Blazor.Utilities.Client.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "MecWise.Blazor.Workflow/1.0.0.0": {
+        "runtime": {
+          "MecWise.Blazor.Workflow.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "MecWise.Distribution.Common.Server/6.0.0.10": {
+        "runtime": {
+          "MecWise.Distribution.Common.Server.dll": {
+            "assemblyVersion": "6.0.0.10",
+            "fileVersion": "6.0.0.10"
+          }
+        }
+      },
+      "MecWise.HR.TmsEngine/5.0.0.0": {
+        "runtime": {
+          "MecWise.HR.TmsEngine.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.0.20"
+          }
+        }
+      },
+      "Mecwise.Messenger.CommonClasses/5.0.0.0": {
+        "runtime": {
+          "Mecwise.Messenger.CommonClasses.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.0.1"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Components/5.0.0.0": {
+        "runtime": {
+          "Microsoft.AspNetCore.Components.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.52605"
+          }
+        }
+      },
+      "Microsoft.JSInterop/3.1.4.0": {
+        "runtime": {
+          "Microsoft.JSInterop.dll": {
+            "assemblyVersion": "3.1.4.0",
+            "fileVersion": "3.100.420.21409"
+          }
+        }
       }
     }
   },
@@ -1888,6 +2050,96 @@
       "sha512": "sha512-lJ8AxvkX7GQxpC6GFCeBj8ThYVyQczx2+f/cWHJU8tjS7YfI6Cv6bon70jVEgs2CiFbmmM8b9j1oZVx0dSI2Ww==",
       "path": "system.xml.xmldocument/4.3.0",
       "hashPath": "system.xml.xmldocument.4.3.0.nupkg.sha512"
+    },
+    "ePlatform.CommonClasses/4.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ePlatform.EpfBase/5.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MecWise.Blazor.Api.DataAccess/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MecWise.Blazor.Api/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MecWise.Blazor.Api.Repositories/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MecWise.Blazor.Api.Services/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MecWise.Blazor.Api.WorkflowServer/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MecWise.Blazor.Common/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MecWise.Blazor.Components/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MecWise.Blazor/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MecWise.Blazor.Entities/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MecWise.Blazor.Utilities.Client/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MecWise.Blazor.Workflow/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MecWise.Distribution.Common.Server/6.0.0.10": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MecWise.HR.TmsEngine/5.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mecwise.Messenger.CommonClasses/5.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.AspNetCore.Components/5.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.JSInterop/3.1.4.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

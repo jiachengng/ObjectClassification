@@ -15,4 +15,64 @@
     <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="ePlatform.CommonClasses">
+      <HintPath>..\..\..\..\Downloads\References\References\ePlatform.CommonClasses.dll</HintPath>
+    </Reference>
+    <Reference Include="ePlatform.EpfBase">
+      <HintPath>..\..\..\..\Downloads\References\References\ePlatform.EpfBase.dll</HintPath>
+    </Reference>
+    <Reference Include="MecWise.Blazor">
+      <HintPath>..\..\..\..\Downloads\References\References\MecWise.Blazor.dll</HintPath>
+    </Reference>
+    <Reference Include="MecWise.Blazor.Api">
+      <HintPath>..\..\..\..\Downloads\References\References\MecWise.Blazor.Api.dll</HintPath>
+    </Reference>
+    <Reference Include="MecWise.Blazor.Api.DataAccess">
+      <HintPath>..\..\..\..\Downloads\References\References\MecWise.Blazor.Api.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="MecWise.Blazor.Api.Repositories">
+      <HintPath>..\..\..\..\Downloads\References\References\MecWise.Blazor.Api.Repositories.dll</HintPath>
+    </Reference>
+    <Reference Include="MecWise.Blazor.Api.Services">
+      <HintPath>..\..\..\..\Downloads\References\References\MecWise.Blazor.Api.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="MecWise.Blazor.Api.WorkflowServer">
+      <HintPath>..\..\..\..\Downloads\References\References\MecWise.Blazor.Api.WorkflowServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MecWise.Blazor.Common">
+      <HintPath>..\..\..\..\Downloads\References\References\MecWise.Blazor.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MecWise.Blazor.Components">
+      <HintPath>..\..\..\..\Downloads\References\References\MecWise.Blazor.Components.dll</HintPath>
+    </Reference>
+    <Reference Include="MecWise.Blazor.Entities">
+      <HintPath>..\..\..\..\Downloads\References\References\MecWise.Blazor.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="MecWise.Blazor.Utilities.Client">
+      <HintPath>..\..\..\..\Downloads\References\References\MecWise.Blazor.Utilities.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="MecWise.Blazor.Workflow">
+      <HintPath>..\..\..\..\Downloads\References\References\MecWise.Blazor.Workflow.dll</HintPath>
+    </Reference>
+    <Reference Include="MecWise.Distribution.Common.Server">
+      <HintPath>..\..\..\..\Downloads\References\References\MecWise.Distribution.Common.Server.dll</HintPath>
+    </Reference>
+    <Reference Include="MecWise.HR.TmsEngine">
+      <HintPath>..\..\..\..\Downloads\References\References\MecWise.HR.TmsEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="Mecwise.Messenger.CommonClasses">
+      <HintPath>..\..\..\..\Downloads\References\References\Mecwise.Messenger.CommonClasses.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Components">
+      <HintPath>..\..\..\..\Downloads\References\References\Microsoft.AspNetCore.Components.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.JSInterop">
+      <HintPath>..\..\..\..\Downloads\References\References\Microsoft.JSInterop.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\Downloads\References\References\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

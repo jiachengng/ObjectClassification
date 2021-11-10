@@ -1,4 +1,5 @@
 ﻿using Emgu.CV;
+using MecWise.Blazor.Api.DataAccess;
 using Microsoft.Azure.CognitiveServices.Vision.CustomVision.Prediction;
 using Microsoft.Azure.CognitiveServices.Vision.CustomVision.Training;
 using Microsoft.Azure.CognitiveServices.Vision.CustomVision.Training.Models;
@@ -15,7 +16,7 @@ using System.Threading;
 
 namespace Test
 {
-    public static class Program
+    public static class Program 
     {
         private static string publishedModelName = "Iteration1";
 
@@ -221,25 +222,28 @@ namespace Test
             //    Console.WriteLine($"\t{c.TagName}: {c.Probability:P1}");
             //}
             string predicted = "";
+            //Only get the first item (Item with the highest probability)
             for (int i = 0; i < 1; i++)
             {
+                //Display the item with the highest probability
                 predicted = result.Predictions[i].TagName;
-                //Console.WriteLine(predicted);
-                Console.WriteLine($"\t{result.Predictions[i].TagName}: {result.Predictions[i].Probability:P1}");
+                Console.WriteLine(predicted);
+
+                //Display the item AND the probability in %
+                //Console.WriteLine($"\t{result.Predictions[i].TagName}: {result.Predictions[i].Probability:P1}");
             }
 
-            Console.WriteLine("Getting database tag");
-            string y = "select RUN_NO from MF_ITEM_TAG where TAG= '" + predicted + "'"; 
+            //Console.WriteLine("Getting database tag");
+            //string y = "select RUN_NO from MF_ITEM_TAG where TAG= '" + predicted + "'"; 
 
-            SqlCommand command = new SqlCommand(y, conn);
-            command.CommandTimeout = 0;
+            //SqlCommand command = new SqlCommand(y, conn);
+            //command.CommandTimeout = 0;
 
-            var dataSet = new DataSet();
-            var dataAdapter = new SqlDataAdapter { SelectCommand = command };
-            dataAdapter.Fill(dataSet);
-            string output = dataSet.Tables[0].Rows[0][0].ToString();
-            Console.WriteLine(output);
-            //Console.WriteLine(command.ExecuteNonQuery());
+            //var dataSet = new DataSet();
+            //var dataAdapter = new SqlDataAdapter { SelectCommand = command };
+            //dataAdapter.Fill(dataSet);
+            //string output = dataSet.Tables[0].Rows[0][0].ToString();
+            //Console.WriteLine(output);
 
 
 
@@ -380,6 +384,21 @@ namespace Test
 
             // Now there is a trained endpoint, it can be used to make a prediction
         }
+
+        public static void AddTagNew(string compcode, string runno, int tag, string price, string doctype, string deptcode, string srlno, string lineno)
+        {
+            DBParameterCollection Params = new DBParameterCollection();
+            Params.Add("COMP_CODE", compcode);
+            Params.Add("RUN_NO", runno);
+            Params.Add("TAG", tag);
+            Params.Add("PRICE", price);
+            Params.Add("DOC_TYPE", doctype);
+            Params.Add("DEPT_CODE", deptcode);
+            Params.Add("SRL_NO", srlno);
+            Params.Add("LINE_NO", lineno);
+            //DB.ExecProcedure()
+        }
+
 
 
 
