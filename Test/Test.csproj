@@ -73,6 +73,9 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\..\..\Downloads\References\References\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Object Classification">
+      <HintPath>..\..\..\..\source\repos\Object Classification\obj\Debug\netcoreapp3.1\Object Classification.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

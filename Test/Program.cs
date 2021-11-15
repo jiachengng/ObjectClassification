@@ -142,7 +142,7 @@ namespace Test
                     //While an item is on the scale
                     while (weighingScaleStatus == 1)
                     {
-                        TestIteration(predictionApi, project);
+                        Object_Classification.Class1.TestIteration(predictionApi, project);
                         Console.Write("Another image? (1 or 0): ");
                         weighingScaleStatus = Convert.ToInt32(Console.ReadLine());
                     }
@@ -198,56 +198,56 @@ namespace Test
 
         }
 
-        private static void TestIteration(CustomVisionPredictionClient predictionApi, Project project)
-        {
-            VideoCapture capture = new VideoCapture(1); //create a camera captue
-            Bitmap image = capture.QueryFrame().ToBitmap(); //take a picture
+        //private static void TestIteration(CustomVisionPredictionClient predictionApi, Project project)
+        //{
+        //    VideoCapture capture = new VideoCapture(1); //create a camera captue
+        //    Bitmap image = capture.QueryFrame().ToBitmap(); //take a picture
 
-            //Saving photos into folder
-            string filename = "file";
-            image.Save(filename);
-            string FileName = System.IO.Path.Combine(@"C:\Users\Admin\Downloads\JC", DateTime.Now.ToString("yyy-MM-dd-hh-mm-ss"));
-            image.Save(FileName + ".jpg");
-            string imageFilePath = filename;
+        //    //Saving photos into folder
+        //    string filename = "file";
+        //    image.Save(filename);
+        //    string FileName = System.IO.Path.Combine(@"C:\Users\Admin\Downloads\JC", DateTime.Now.ToString("yyy-MM-dd-hh-mm-ss"));
+        //    image.Save(FileName + ".jpg");
+        //    string imageFilePath = filename;
 
-            //MemoryStream testImage = new MemoryStream(File.ReadAllBytes(Path.Combine(@"C:\Users\User\Downloads", "2021-10-13-02-47-14.jpg"))); ;
-            MemoryStream testImage = new MemoryStream(File.ReadAllBytes(imageFilePath)); 
-            // Make a prediction against the new project
-            Console.WriteLine("Making a prediction.");
-            var result = predictionApi.ClassifyImage(project.Id, publishedModelName, testImage);
+        //    //MemoryStream testImage = new MemoryStream(File.ReadAllBytes(Path.Combine(@"C:\Users\User\Downloads", "2021-10-13-02-47-14.jpg"))); ;
+        //    MemoryStream testImage = new MemoryStream(File.ReadAllBytes(imageFilePath)); 
+        //    // Make a prediction against the new project
+        //    Console.WriteLine("Making a prediction.");
+        //    var result = predictionApi.ClassifyImage(project.Id, publishedModelName, testImage);
 
-            // Loop over each prediction and write out the results
-            //foreach (var c in result.Predictions)
-            //{
-            //    Console.WriteLine($"\t{c.TagName}: {c.Probability:P1}");
-            //}
-            string predicted = "";
-            //Only get the first item (Item with the highest probability)
-            for (int i = 0; i < 1; i++)
-            {
-                //Display the item with the highest probability
-                predicted = result.Predictions[i].TagName;
-                Console.WriteLine(predicted);
+        //    // Loop over each prediction and write out the results
+        //    //foreach (var c in result.Predictions)
+        //    //{
+        //    //    Console.WriteLine($"\t{c.TagName}: {c.Probability:P1}");
+        //    //}
+        //    string predicted = "";
+        //    //Only get the first item (Item with the highest probability)
+        //    for (int i = 0; i < 1; i++)
+        //    {
+        //        //Display the item with the highest probability
+        //        predicted = result.Predictions[i].TagName;
+        //        Console.WriteLine(predicted);
 
-                //Display the item AND the probability in %
-                //Console.WriteLine($"\t{result.Predictions[i].TagName}: {result.Predictions[i].Probability:P1}");
-            }
+        //        //Display the item AND the probability in %
+        //        //Console.WriteLine($"\t{result.Predictions[i].TagName}: {result.Predictions[i].Probability:P1}");
+        //    }
 
-            //Console.WriteLine("Getting database tag");
-            //string y = "select RUN_NO from MF_ITEM_TAG where TAG= '" + predicted + "'"; 
+        //    //Console.WriteLine("Getting database tag");
+        //    //string y = "select RUN_NO from MF_ITEM_TAG where TAG= '" + predicted + "'"; 
 
-            //SqlCommand command = new SqlCommand(y, conn);
-            //command.CommandTimeout = 0;
+        //    //SqlCommand command = new SqlCommand(y, conn);
+        //    //command.CommandTimeout = 0;
 
-            //var dataSet = new DataSet();
-            //var dataAdapter = new SqlDataAdapter { SelectCommand = command };
-            //dataAdapter.Fill(dataSet);
-            //string output = dataSet.Tables[0].Rows[0][0].ToString();
-            //Console.WriteLine(output);
+        //    //var dataSet = new DataSet();
+        //    //var dataAdapter = new SqlDataAdapter { SelectCommand = command };
+        //    //dataAdapter.Fill(dataSet);
+        //    //string output = dataSet.Tables[0].Rows[0][0].ToString();
+        //    //Console.WriteLine(output);
 
 
 
-        }
+        //}
         public static void ChildThread1()
         {
             Console.WriteLine("Child 1 thread starts");

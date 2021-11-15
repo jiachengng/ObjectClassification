@@ -32,7 +32,8 @@
           "MecWise.HR.TmsEngine": "5.0.0.0",
           "Mecwise.Messenger.CommonClasses": "5.0.0.0",
           "Microsoft.AspNetCore.Components": "5.0.0.0",
-          "Microsoft.JSInterop": "3.1.4.0"
+          "Microsoft.JSInterop": "3.1.4.0",
+          "Object Classification": "1.0.0.0"
         },
         "runtime": {
           "Test.dll": {}
@@ -1307,6 +1308,14 @@
             "fileVersion": "3.100.420.21409"
           }
         }
+      },
+      "Object Classification/1.0.0.0": {
+        "runtime": {
+          "Object Classification.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -2137,6 +2146,11 @@
       "sha512": ""
     },
     "Microsoft.JSInterop/3.1.4.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Object Classification/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
