@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "Emgu.CV/4.5.3.4721": {
+      "Emgu.CV/4.5.4.4788": {
         "type": "package",
         "dependencies": {
           "System.Drawing.Primitives": "4.3.0",
@@ -16,10 +16,10 @@
           "lib/netstandard2.0/Emgu.CV.Platform.NetStandard.dll": {}
         }
       },
-      "Emgu.CV.Bitmap/4.5.3.4721": {
+      "Emgu.CV.Bitmap/4.5.4.4788": {
         "type": "package",
         "dependencies": {
-          "Emgu.CV": "4.5.3.4721",
+          "Emgu.CV": "4.5.4.4788",
           "System.Drawing.Common": "5.0.2"
         },
         "compile": {
@@ -29,19 +29,19 @@
           "lib/netstandard2.0/Emgu.CV.Bitmap.dll": {}
         }
       },
-      "Emgu.CV.runtime.windows/4.5.3.4721": {
+      "Emgu.CV.runtime.windows/4.5.4.4788": {
         "type": "package",
         "dependencies": {
-          "Emgu.CV": "4.5.3.4721",
-          "Emgu.runtime.windows.msvc.rt.x64": "19.29.30038.1",
-          "Emgu.runtime.windows.msvc.rt.x86": "19.29.30038.1"
+          "Emgu.CV": "4.5.4.4788",
+          "Emgu.runtime.windows.msvc.rt.x64": "19.29.30136",
+          "Emgu.runtime.windows.msvc.rt.x86": "19.29.30136"
         },
         "runtimeTargets": {
           "runtimes/win-x64/native/cvextern.dll": {
             "assetType": "native",
             "rid": "win-x64"
           },
-          "runtimes/win-x64/native/opencv_videoio_ffmpeg453_64.dll": {
+          "runtimes/win-x64/native/opencv_videoio_ffmpeg454_64.dll": {
             "assetType": "native",
             "rid": "win-x64"
           },
@@ -49,13 +49,13 @@
             "assetType": "native",
             "rid": "win-x86"
           },
-          "runtimes/win-x86/native/opencv_videoio_ffmpeg453.dll": {
+          "runtimes/win-x86/native/opencv_videoio_ffmpeg454.dll": {
             "assetType": "native",
             "rid": "win-x86"
           }
         }
       },
-      "Emgu.runtime.windows.msvc.rt.x64/19.29.30038.1": {
+      "Emgu.runtime.windows.msvc.rt.x64/19.29.30136": {
         "type": "package",
         "runtimeTargets": {
           "runtimes/win-x64/native/concrt140.dll": {
@@ -92,7 +92,7 @@
           }
         }
       },
-      "Emgu.runtime.windows.msvc.rt.x86/19.29.30038.1": {
+      "Emgu.runtime.windows.msvc.rt.x86/19.29.30136": {
         "type": "package",
         "runtimeTargets": {
           "runtimes/win-x86/native/concrt140.dll": {
@@ -1770,15 +1770,16 @@
     }
   },
   "libraries": {
-    "Emgu.CV/4.5.3.4721": {
-      "sha512": "pMqZegZbqcKFe4tcqc3lu4FAdOJQvbTkdh4wCYQ1Q7CQUqmM5OfAe1wCddBlqjxog/A/qNv598bSp23R4qC2TQ==",
+    "Emgu.CV/4.5.4.4788": {
+      "sha512": "RJUW46+ktLVr0JLJ0lgdeVbqw3Dt4L8miUYdTwe+9BVUKwgn8aD2ozEc6zAGJJEt8SkgihY62WM8Yq6DxkPtCA==",
       "type": "package",
-      "path": "emgu.cv/4.5.3.4721",
+      "path": "emgu.cv/4.5.4.4788",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.txt",
-        "emgu.cv.4.5.3.4721.nupkg.sha512",
+        "docs/README.md",
+        "emgu.cv.4.5.4.4788.nupkg.sha512",
         "emgu.cv.nuspec",
         "icon.png",
         "lib/netstandard2.0/Emgu.CV.Platform.NetStandard.dll",
@@ -1787,47 +1788,48 @@
         "lib/xamarinios10/Emgu.CV.Platform.NetStandard.xml"
       ]
     },
-    "Emgu.CV.Bitmap/4.5.3.4721": {
-      "sha512": "mjW/C0ueDGADi4VSyKqjMde4SwRBLzBpsUSY0V5coP1S2Nv5OZFHiq/+O4vN85Uh2nmCaIBlnif7IgBX/dbVIQ==",
+    "Emgu.CV.Bitmap/4.5.4.4788": {
+      "sha512": "wavOaWzaMh7iwUAmX66nr7UfKVNZlvYHWGCSY3cERxitAp7YHUbBHYS8mC3FF9re+2+t9us184Txiutu/TzThg==",
       "type": "package",
-      "path": "emgu.cv.bitmap/4.5.3.4721",
+      "path": "emgu.cv.bitmap/4.5.4.4788",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.txt",
-        "emgu.cv.bitmap.4.5.3.4721.nupkg.sha512",
+        "docs/README.md",
+        "emgu.cv.bitmap.4.5.4.4788.nupkg.sha512",
         "emgu.cv.bitmap.nuspec",
         "icon.png",
         "lib/netstandard2.0/Emgu.CV.Bitmap.dll",
         "lib/netstandard2.0/Emgu.CV.Bitmap.xml"
       ]
     },
-    "Emgu.CV.runtime.windows/4.5.3.4721": {
-      "sha512": "zxt+SJBpVQjBf4gYtYgy8+p6hdYLEt4+/gwRZIUSd6D36zuoukJzwptu/izRnIQNn67AgnoSWUMDWql1tzk6Xg==",
+    "Emgu.CV.runtime.windows/4.5.4.4788": {
+      "sha512": "vrFsPWHkyTlbfagykJNEyKtlJRGZ56oNu4BrQk/gSyVaqMnaNCiQo7erqslCZhV2nLa7+x4rb5urW1J8MIy6kQ==",
       "type": "package",
-      "path": "emgu.cv.runtime.windows/4.5.3.4721",
+      "path": "emgu.cv.runtime.windows/4.5.4.4788",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.txt",
-        "emgu.cv.runtime.windows.4.5.3.4721.nupkg.sha512",
+        "emgu.cv.runtime.windows.4.5.4.4788.nupkg.sha512",
         "emgu.cv.runtime.windows.nuspec",
         "icon.png",
         "runtimes/win-x64/native/cvextern.dll",
-        "runtimes/win-x64/native/opencv_videoio_ffmpeg453_64.dll",
+        "runtimes/win-x64/native/opencv_videoio_ffmpeg454_64.dll",
         "runtimes/win-x86/native/cvextern.dll",
-        "runtimes/win-x86/native/opencv_videoio_ffmpeg453.dll"
+        "runtimes/win-x86/native/opencv_videoio_ffmpeg454.dll"
       ]
     },
-    "Emgu.runtime.windows.msvc.rt.x64/19.29.30038.1": {
-      "sha512": "FO+oDGku81USkTiNcGN1NDG16HJ3U9SBvfHbVD7UMlYh2yOPTE62d0K81GAbrNrW21Fj/B0f/LRZJxgStAjvlw==",
+    "Emgu.runtime.windows.msvc.rt.x64/19.29.30136": {
+      "sha512": "1XjyBGpr/EKGPHhDmrnmpA6pdDMuscpzzV87qjd9QywKcdDAap9jQsL9wekKEJaY3xOitDxIOaQCsylk7RoLww==",
       "type": "package",
-      "path": "emgu.runtime.windows.msvc.rt.x64/19.29.30038.1",
+      "path": "emgu.runtime.windows.msvc.rt.x64/19.29.30136",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.txt",
-        "emgu.runtime.windows.msvc.rt.x64.19.29.30038.1.nupkg.sha512",
+        "emgu.runtime.windows.msvc.rt.x64.19.29.30136.nupkg.sha512",
         "emgu.runtime.windows.msvc.rt.x64.nuspec",
         "icon.png",
         "runtimes/win-x64/native/concrt140.dll",
@@ -1840,15 +1842,15 @@
         "runtimes/win-x64/native/vcruntime140_1.dll"
       ]
     },
-    "Emgu.runtime.windows.msvc.rt.x86/19.29.30038.1": {
-      "sha512": "oxwgvMXGpKcuTegwZTpLo/gvjIOGXV6rhjDo/oNlyPZGRTEBe7XpkPMoUVydXY6xQD7Z8SIZqR3XEXAbzgsDZA==",
+    "Emgu.runtime.windows.msvc.rt.x86/19.29.30136": {
+      "sha512": "Pc/z2ZGWfqaVcgSSG1rd2AOQdC7NvSbLBweHs8vlHflGCEmFrejI0sg0w14ZWz2iWrOAsHiJIChO0l3H63gTqw==",
       "type": "package",
-      "path": "emgu.runtime.windows.msvc.rt.x86/19.29.30038.1",
+      "path": "emgu.runtime.windows.msvc.rt.x86/19.29.30136",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.txt",
-        "emgu.runtime.windows.msvc.rt.x86.19.29.30038.1.nupkg.sha512",
+        "emgu.runtime.windows.msvc.rt.x86.19.29.30136.nupkg.sha512",
         "emgu.runtime.windows.msvc.rt.x86.nuspec",
         "icon.png",
         "runtimes/win-x86/native/concrt140.dll",
@@ -6145,8 +6147,8 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "Emgu.CV.Bitmap >= 4.5.3.4721",
-      "Emgu.CV.runtime.windows >= 4.5.3.4721",
+      "Emgu.CV.Bitmap >= 4.5.4.4788",
+      "Emgu.CV.runtime.windows >= 4.5.4.4788",
       "Microsoft.Azure.CognitiveServices.Vision.CustomVision.Prediction >= 2.0.0",
       "Microsoft.Azure.CognitiveServices.Vision.CustomVision.Training >= 2.0.0",
       "System.Console >= 4.3.1",
@@ -6155,28 +6157,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jiacheng\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jiacheng\\Desktop\\Github\\ObjectClassification\\Test\\Test.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\JC\\Testing\\Test\\Test.csproj",
       "projectName": "Test",
-      "projectPath": "C:\\Users\\jiacheng\\Desktop\\Github\\ObjectClassification\\Test\\Test.csproj",
-      "packagesPath": "C:\\Users\\jiacheng\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jiacheng\\Desktop\\Github\\ObjectClassification\\Test\\obj\\",
+      "projectPath": "C:\\Users\\Admin\\Desktop\\JC\\Testing\\Test\\Test.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\Desktop\\JC\\Testing\\Test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\jiacheng\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -6203,11 +6202,11 @@
         "dependencies": {
           "Emgu.CV.Bitmap": {
             "target": "Package",
-            "version": "[4.5.3.4721, )"
+            "version": "[4.5.4.4788, )"
           },
           "Emgu.CV.runtime.windows": {
             "target": "Package",
-            "version": "[4.5.3.4721, )"
+            "version": "[4.5.4.4788, )"
           },
           "Microsoft.Azure.CognitiveServices.Vision.CustomVision.Prediction": {
             "target": "Package",
@@ -6245,7 +6244,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -126,9 +126,7 @@ C:\Users\Admin\Desktop\JC\Testing\Test\bin\Debug\netcoreapp3.1\Microsoft.Win32.S
 C:\Users\Admin\Desktop\JC\Testing\Test\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\Admin\Desktop\JC\Testing\Test\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
 C:\Users\Admin\Desktop\JC\Testing\Test\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\cvextern.dll
-C:\Users\Admin\Desktop\JC\Testing\Test\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\opencv_videoio_ffmpeg453_64.dll
 C:\Users\Admin\Desktop\JC\Testing\Test\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\cvextern.dll
-C:\Users\Admin\Desktop\JC\Testing\Test\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\opencv_videoio_ffmpeg453.dll
 C:\Users\Admin\Desktop\JC\Testing\Test\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\concrt140.dll
 C:\Users\Admin\Desktop\JC\Testing\Test\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\msvcp140.dll
 C:\Users\Admin\Desktop\JC\Testing\Test\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\msvcp140_1.dll
@@ -257,3 +255,7 @@ C:\Users\jiacheng\Desktop\Github\ObjectClassification\Test\obj\Debug\netcoreapp3
 C:\Users\jiacheng\Desktop\Github\ObjectClassification\Test\obj\Debug\netcoreapp3.1\Test.dll
 C:\Users\jiacheng\Desktop\Github\ObjectClassification\Test\obj\Debug\netcoreapp3.1\Test.pdb
 C:\Users\jiacheng\Desktop\Github\ObjectClassification\Test\obj\Debug\netcoreapp3.1\Test.genruntimeconfig.cache
+C:\Users\Admin\Desktop\JC\Testing\Test\bin\Debug\netcoreapp3.1\Object Classification.dll
+C:\Users\Admin\Desktop\JC\Testing\Test\bin\Debug\netcoreapp3.1\Object Classification.pdb
+C:\Users\Admin\Desktop\JC\Testing\Test\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\opencv_videoio_ffmpeg454_64.dll
+C:\Users\Admin\Desktop\JC\Testing\Test\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\opencv_videoio_ffmpeg454.dll
